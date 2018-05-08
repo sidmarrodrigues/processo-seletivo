@@ -1,18 +1,29 @@
-Olá, candidato.
- 
-Em cada questão monte, a estrutura de classes de entidade e serviços das maneira que achar mais adequado usando os conceitos de OOP.
+# Projeto de teste para vaga de desenvolvedor
+> Esse é um repositório com as regras para criação do projeto para vaga de analista desenvolvedor na ISAT
 
-No acesso à banco de dados, você pode usar usar algum ORM para isso, Entity Framework, NHibenate ou outros, assim como fazer manualmente usando ADO.
-Cada questão tem um arquivo .sdf localizado na pasta App_Data.
+## Instruções
 
-Existem algumas classes auxiliares no projeto Helpers, você pode usá-los em qualquer questão e pode criar novas caso achar necessário.
+Em cada questão monte a estrutura de classes de entidade e serviços, da maneira que achar mais adequado usando os conceitos de OOP.
 
-É permitido também o uso de pacotes NuGet (https://www.nuget.org/) que julgar necessário.
+### Esperamos que você
+- Implemente a solução descrita no arquivo Program.cs da Questão 1
+- Implemente a solução descrita no arquivo HomeController.cs da Questão 2
+- Entretanto, o mais importante é conseguirmos analisar a maneira que você codifica, não tem problema se não for possível terminar tudo no tempo determinado.
 
-Obs1: Os banco de dados estão usando SQL Server Compact Edition 3.5. Essa informação ajuda caso você usar algum ORM ou para montar a ConnectionString.
-Obs2: O Nuget Package Manager precisa ser da versão 2.8 para que o Restore Packages funcione.
+### Você pode
+- Utilizar pacotes NuGet (https://www.nuget.org/) que julgar necessário
+- Utilizar algum framework para construção do FrontEnd: Backbone, Angular, React ou Vue
+- Utilizar as classes auxiliares no projeto Helpers, em qualquer questão e pode criar novas caso achar necessário.
+- No acesso à banco de dados, você pode usar usar algum ORM: Entity Framework, NHibenate, Dapper ou outro, assim como fazer manualmente utilizando ADO.
 
-Na questão 1 olhe o arquivo Program.cs para mais informações.
-Na questão 2 olhe o arquivo HomeController.cs para mais informações.
+### Observações
+- O banco de dados utilizado é: SQL Server Compact Edition 4.0
+- O Nuget Package Manager precisa ser da versão 2.8 para que o Restore Packages funcione.
+- Cada questão tem o banco de dados .sdf localizado na pasta App_Data.
 
-Boa prova!
+### Envio
+- Para o envio, clone este repositório em sua conta do Gitlab
+- Submeta o merge request com a solução implementada
+- Exemplo: https://gitlab.com/isat/processo-seletivo/merge_requests/1
+
+**Boa Prova!**

@@ -10,8 +10,6 @@ using System.Web.Mvc;
  *  Faça um crud básico com listagem, edição e remoção de itens. 
  *  Crie as views que achar necessário. Modele as classes da maneira que achar mais interessante e como você faria no seu dia a dia. 
  *  Como listagem, deixamos por padrão o GridMVC, mas você pode usar outro que tenha mais facilidade.
- *  O mais importante é conseguirmos analisar a maneira que você codifica, não tem problema se não for possível terminar tudo.
- *
  */
 namespace Questao2.Controllers
 {
