@@ -24,5 +24,6 @@ Em cada questão monte a estrutura de classes de entidade e serviços, da maneir
 ### Envio
 - Para o envio, clone este repositório em sua conta do Gitlab
 - Submeta o merge request com a solução implementada
+- Exemplo: https://gitlab.com/isat/processo-seletivo/merge_requests/1
 
 **Boa Prova!**
