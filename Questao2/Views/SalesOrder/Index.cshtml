@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Foo>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+@using GridMvc.Html
+@Html.Grid(this.Model).Columns(columns =>
+           {
+               columns.Add(foo => foo.Title).Titled("ID").SetWidth(110);
+               columns.Add(foo => foo.Description).Sortable(true);
+               columns.Add().Encoded(false).Sanitized(false).Titled("Editar").RenderValueAs(o => @Html.ActionLink("Editar", "Edit", "SalesOrder", new { id = 1 }, null));
+               columns.Add().Encoded(false).Sanitized(false).Titled("Excluir").RenderValueAs(o => @Html.ActionLink("Excluir", "Delete", "SalesOrder", new { id = 1 }, null));
+           }).WithPaging(50)
+
+
+@Html.ActionLink(linkText: "Novo pedido", actionName: "Create", controllerName: "SalesOrder")
