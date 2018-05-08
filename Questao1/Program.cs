@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,8 +20,6 @@ using Helpers;
  * -- SalesOrderNumber, TotalValue, ItensCount
  * 
  * Onde "User N" pode ser substituído pelo campo Name da tabela User e SalesOrderNumber, TotalValue, ItensCount os campos da tabela SalesOrder.
- * 
- * O mais importante é conseguirmos analisar a maneira que você codifica, não tem problema se não for possível terminar tudo.
  *
  */
 namespace Questao1
