@@ -17,7 +17,7 @@ Em cada questão monte a estrutura de classes de entidade e serviços, da maneir
 - No acesso à banco de dados, você pode usar usar algum ORM: Entity Framework, NHibenate, Dapper ou outro, assim como fazer manualmente utilizando ADO.
 
 ### Observações
-- O banco de dados utilizado é: SQL Server Compact Edition 3.5.
+- O banco de dados utilizado é: SQL Server Compact Edition 4.0
 - O Nuget Package Manager precisa ser da versão 2.8 para que o Restore Packages funcione.
 - Cada questão tem o banco de dados .sdf localizado na pasta App_Data.
 
