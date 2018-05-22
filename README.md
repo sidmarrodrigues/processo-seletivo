@@ -21,9 +21,4 @@ Em cada questão monte a estrutura de classes de entidade e serviços, da maneir
 - O Nuget Package Manager precisa ser da versão 2.8 para que o Restore Packages funcione.
 - Cada questão tem o banco de dados .sdf localizado na pasta App_Data.
 
-### Envio
-- Para o envio, clone este repositório em sua conta do Gitlab
-- Submeta o merge request com a solução implementada
-- Exemplo: https://gitlab.com/isat/processo-seletivo/merge_requests/1
-
 **Boa Prova!**
