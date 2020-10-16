@@ -1,0 +1,50 @@
+﻿@model Questao2.Models.Item
+<h1>Novo Item</h1>
+<hr />
+@using (Html.BeginForm("Create", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+<div class="form-horizontal">
+    <div class="form-group">
+        Código Item
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.CodigoItem,
+                               new { @class = "form-control", @placeholder = "Código do Item" })
+            
+        </div>
+    </div>
+    <div class="form-group">
+        Nome
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Nome,
+                               new { @class = "form-control", @placeholder = "Nome do item" })
+            
+        </div>
+    </div>
+    <div class="form-group">
+        Descrição
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Descricao,
+                               new { @class = "form-control", @placeholder = "Descrição do item" })
+            
+        </div>
+    </div>
+    <div class="form-group">
+        Preço
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Preco,
+                               new { @class = "form-control", @placeholder = "Preço do item" })
+            
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Salvar Produto" class="btn btn-success" />
+            @Html.ActionLink("Página Inicial", "Index", null, new { @class = "btn btn-danger" })
+        </div>
+    </div>
+</div>
+}
+<div>
+</div>

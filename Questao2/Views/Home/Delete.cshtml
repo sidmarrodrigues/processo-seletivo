@@ -1,0 +1,47 @@
+﻿@model Questao2.Models.Item
+@{
+    ViewBag.Title = "Deletar";
+}
+<h2>Deletar Produto</h2>
+<h3 class="text-danger">Deseja deletar este Item ?</h3>
+<div class="form-horizontal">
+    <div class="form-group">
+        Código Item
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.CodigoItem,
+                                      new { @class = "form-control", @disabled = "disabled" })
+        </div>
+    </div>
+    <div class="form-group">
+        Nome
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Nome,
+                                      new { @class = "form-control", @disabled = "disabled" })
+        </div>
+    </div>
+    <div class="form-group">
+        Descrição
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Descricao,
+                                      new { @class = "form-control", @disabled = "disabled" })
+        </div>
+    </div>
+    <div class="form-group">
+        Preço
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Preco,
+                          new { @class = "form-control", @disabled = "disabled" })
+        </div>
+    </div>
+    
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Deletar Item" class="btn btn-danger" />
+                @Html.ActionLink("Página Inicial", "Index", null, new { @class = "btn btn-warning" })
+            </div>
+        </div>
+    }
+</div>

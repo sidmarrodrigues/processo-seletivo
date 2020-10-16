@@ -1,10 +1,62 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿@model IEnumerable<Questao2.Models.Item>
 
-<h2>@ViewBag.Message</h2>
-<p>
-    Faça um CRUD básico de Sales Order com listagem, inserção, edição e remoção.
 
-    Clique em Sales Order no menu no topo.
-</p>
+    @{
+        ViewBag.Title = "Home Page";
+    }
+
+    <h2>@ViewBag.Message</h2>
+    <p>
+        Faça um CRUD básico de Sales Order com listagem, inserção, edição e remoção.
+
+        Clique em Sales Order no menu no topo.
+
+        <h2>Implementação Novos Itens</h2>
+
+    <p>
+        @Html.ActionLink("Incluir Novo Item", "Create", "Home", new { @class = "btn btn-success" })
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                   Codigo Item
+                </th>
+                <th>
+                   Nome
+                </th>
+                <th>
+                    Descrição
+                </th>
+                <th>
+                   Preço
+                </th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CodigoItem)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descricao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Preco)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Deletar", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    </p>

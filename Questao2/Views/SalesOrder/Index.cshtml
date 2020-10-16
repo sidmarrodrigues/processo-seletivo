@@ -1,17 +1,62 @@
-﻿@model IEnumerable<Foo>
-@{
-    ViewBag.Title = "Home Page";
-}
+﻿@model IEnumerable<Questao2.Models.SalesOrder>
+    @{
+        ViewBag.Title = "Home Page";
+    }
 
 
-@using GridMvc.Html
-@Html.Grid(this.Model).Columns(columns =>
-           {
-               columns.Add(foo => foo.Title).Titled("ID").SetWidth(110);
-               columns.Add(foo => foo.Description).Sortable(true);
-               columns.Add().Encoded(false).Sanitized(false).Titled("Editar").RenderValueAs(o => @Html.ActionLink("Editar", "Edit", "SalesOrder", new { id = 1 }, null));
-               columns.Add().Encoded(false).Sanitized(false).Titled("Excluir").RenderValueAs(o => @Html.ActionLink("Excluir", "Delete", "SalesOrder", new { id = 1 }, null));
-           }).WithPaging(50)
+    @*@using GridMvc.Html
+    @Html.Grid(this.Model).Columns(columns =>
+               {
+                   columns.Add(foo => foo.Title).Titled("ID").SetWidth(110);
+                   columns.Add(foo => foo.Description).Sortable(true);
+                   columns.Add().Encoded(false).Sanitized(false).Titled("Editar").RenderValueAs(o => @Html.ActionLink("Editar", "Edit", "SalesOrder", new { id = 1 }, null));
+                   columns.Add().Encoded(false).Sanitized(false).Titled("Excluir").RenderValueAs(o => @Html.ActionLink("Excluir", "Delete", "SalesOrder", new { id = 1 }, null));
+               }).WithPaging(50)*@
 
 
-@Html.ActionLink(linkText: "Novo pedido", actionName: "Create", controllerName: "SalesOrder")
+   
+
+    <p>
+        @Html.ActionLink("Incluir Novo Sales Order", "Create", "SalesOrder", new { @class = "btn btn-success" })
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Value
+                </th>
+                <th>
+                    User Name
+                </th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Value)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.User.Name);
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

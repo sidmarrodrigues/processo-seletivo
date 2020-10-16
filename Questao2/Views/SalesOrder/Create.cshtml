@@ -1,5 +1,43 @@
-﻿@{
-    ViewBag.Title = "Create";
-}
+﻿@model Questao2.Models.SalesOrder
+<h1>Novo Item</h1>
+<hr />
+@using (Html.BeginForm("Create", "SalesOrder", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <div class="form-group">
+            Title
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Title,
+                                   new { @class = "form-control", @placeholder = "Title" })
 
-<h2>Create</h2>
+            </div>
+        </div>
+        <div class="form-group">
+            Description
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Description,
+                                   new { @class = "form-control", @placeholder = "Description" })
+
+            </div>
+        </div>
+        <div class="form-group">
+            Value
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Value,
+                                   new { @class = "form-control", @placeholder = "Value" })
+
+            </div>
+        </div>
+        
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Salvar Sales Order" class="btn btn-success" />
+                @Html.ActionLink("Página Inicial", "Index", null, new { @class = "btn btn-danger" })
+            </div>
+        </div>
+    </div>
+}
+<div>
+</div>

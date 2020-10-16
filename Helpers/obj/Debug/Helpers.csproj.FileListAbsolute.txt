@@ -1,0 +1,6 @@
+C:\Users\sidka\source\repos\processo-seletivo\Helpers\bin\Debug\Helpers.dll
+C:\Users\sidka\source\repos\processo-seletivo\Helpers\bin\Debug\Helpers.pdb
+C:\Users\sidka\source\repos\processo-seletivo\Helpers\obj\Debug\Helpers.csprojAssemblyReference.cache
+C:\Users\sidka\source\repos\processo-seletivo\Helpers\obj\Debug\Helpers.csproj.CoreCompileInputs.cache
+C:\Users\sidka\source\repos\processo-seletivo\Helpers\obj\Debug\Helpers.dll
+C:\Users\sidka\source\repos\processo-seletivo\Helpers\obj\Debug\Helpers.pdb

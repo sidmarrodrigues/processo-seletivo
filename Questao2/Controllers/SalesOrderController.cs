@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Questao2.DAL;
+using Questao2.Models;
+using Questao2.Views.Home;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,42 +11,50 @@ namespace Questao2.Controllers
 {
     public class SalesOrderController : Controller
     {
+
+        private AppDbContext db;
+
+        public SalesOrderController()
+        {
+            db = new AppDbContext();
+        }
         //
         // GET: /SalesOrder/
 
         public ActionResult Index()
         {
             // TODO: Retornar a coleção de pedidos de vendas (SalesOrder).
-            var list = new List<Foo>() 
-            { 
-                new Foo()
-                {
-                    Title = "Title 1",
-                    Description = "Description"
-                },
-                new Foo()
-                {
-                    Title = "Title 2",
-                    Description = "Description"
-                },
-                new Foo()
-                {
-                    Title = "Title 3",
-                    Description = "Description"
-                },
-                new Foo()
-                {
-                    Title = "Title 4",
-                    Description = "Description"
-                },
-                new Foo()
-                {
-                    Title = "Title 5",
-                    Description = "Description"
-                }
-            };
-
-            return View(list);
+            //var list = new List<Foo>() 
+            //{ 
+            //    new Foo()
+            //    {
+            //        Title = "Title 1",
+            //        Description = "Description"
+            //    },
+            //    new Foo()
+            //    {
+            //        Title = "Title 2",
+            //        Description = "Description"
+            //    },
+            //    new Foo()
+            //    {
+            //        Title = "Title 3",
+            //        Description = "Description"
+            //    },
+            //    new Foo()
+            //    {
+            //        Title = "Title 4",
+            //        Description = "Description"
+            //    },
+            //    new Foo()
+            //    {
+            //        Title = "Title 5",
+            //        Description = "Description"
+            //    }
+            //};
+            var sales = db.SalesOrder.ToList();
+            return View(sales);
+            
         }
 
         //
@@ -51,28 +62,33 @@ namespace Questao2.Controllers
 
         public ActionResult Create()
         {
-            // TODO: Implementação.
-            return View();
+            var model = new SalesOrder();
+            return View(model);
         } 
 
         //
         // POST: /SalesOrder/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(SalesOrder model)
         {
 
-            // TODO: Implementação.
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
+                var salesOrderNovo = new SalesOrder();
+                var user = db.Users.Find(1);
+                salesOrderNovo.Title = model.Title;
+                salesOrderNovo.Description = model.Description;
+                salesOrderNovo.Value = model.Value;
+                salesOrderNovo.User = user;
+
+                db.SalesOrder.Add(salesOrderNovo);
+                db.SaveChanges();
 
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(model);
         }
         
         //
